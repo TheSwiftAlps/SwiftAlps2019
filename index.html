@@ -18,6 +18,7 @@
 
   <!-- JS -->
   <script src="https://js.tito.io/v1" async=""></script>
+  <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 
 </head>
 
@@ -585,6 +586,19 @@
         }
     });
 
+    });
+
+    mapkit.init({authorizationCallback: function(done) {
+      done("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IlNYUVlCQlc2TEIifQ.eyJleHAiOiIxODgyOTg0OTMwIiwiaXNzIjoiTDQ4NzlKWUJWOSIsIm9yaWdpbiI6Imh0dHBzOi8vdGhlc3dpZnRhbHBzLmNvbSIsImlhdCI6IjE1Njc2MjQ5MDQifQ.QluNcxbrdLKHEhCAkZBrn2DokLrU4RRmepkAA85um5o");
+    }});
+
+    mapkit.addEventListener("configuration-change", function(event) {
+    switch (event.status) {
+    case "Initialized":
+        break;
+    case "Refreshed":
+        break;
+    }
     });
 
   </script>
