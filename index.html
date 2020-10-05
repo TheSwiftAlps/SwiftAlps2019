@@ -18,6 +18,10 @@
 
   <!-- JS -->
   <script src="https://js.tito.io/v1" async=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
+  
+  <!-- Vue.js -->
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 
 </head>
 
@@ -327,9 +331,39 @@
       <h3 class="h2 font-weight-bolder">Swift Alps: Remote</h3>
       <hr>
       <div class="row">
-        <div class="col-sm-6 col-12">
+        <div id="schedule" class="">
           <p>We will share details about the online event and schedule soon.</p>
           <p>The event will be scheduled between 14:00 and 22:00 CET (including breaks).</p>
+          <h4>Thursday, November 26th 2020</h4>
+          <div>
+            <table class="table">
+              <thead>
+                <th>Session</th>
+                <th>Crans-Montana</th>
+                <th>{{ luxon.DateTime.local().offsetNameShort }}</th>
+              </thead>
+              <tr v-for="session in localThursdaySessions">
+                <td>{{ session.name }}</td>
+                <td>{{ session.cransMontanaTime }}</td>
+                <td>{{ session.localTime }}</td>
+              </tr>
+            </table>
+          </div>
+          <h4>Friday, November 27th 2020</h4>
+          <div>
+            <table class="table">
+              <thead>
+                <th>Session</th>
+                <th>Crans-Montana</th>
+                <th>{{ luxon.DateTime.local().offsetNameShort }}</th>
+              </thead>
+              <tr v-for="session in localFridaySessions">
+                <td>{{ session.name }}</td>
+                <td>{{ session.cransMontanaTime }}</td>
+                <td>{{ session.localTime }}</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -479,6 +513,7 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
   <script src="js/scrolling-nav.js"></script>
+  <script src="js/sessions.js"></script>
   <script type="text/javascript">
 
     var mySwiper = new Swiper('.swiper-container', {
@@ -515,7 +550,6 @@
           $('.navbar').addClass('navbar-dark')
         }
       });
-
     });
 
   </script>
