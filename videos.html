@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="An experimental event taking place in the Swiss Alps">
+  <meta name="author" content="Swiss Mobile Club">
+
+  <title>The Swift Alps</title>
+
+  <!-- CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+  <!-- JS -->
+  <script src="https://js.tito.io/v1" async=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
+  
+  <!-- Vue.js -->
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+
+</head>
+
+<body id="page-top">
+
+<section class="text-dark">
+  <div class="container py-5">
+    <h2>Widgets 101: Let’s Build a Corona Tracker Widget</h2>
+    <p class="lead">Engin Kurutepe</p>
+    <video style="height: 400px;" src="videos/Engin.mp4"></video>
+  </div>
+</section>
+
+
+
+
+  <!-- JS -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+  <script src="js/scrolling-nav.js"></script>
+  <script src="js/sessions.js"></script>
+  <script type="text/javascript">
+
+    var mySwiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      slidesPerView: 3,
+      loop: true
+    })
+
+    function checkNavbar() {
+      if ($(window).scrollTop() > $("#mountains").position().top - 30) {
+        $('.logo-text').addClass('text-sa');
+        $('#logoWhite').addClass('d-none');
+        $('#logoRed').removeClass('d-none');
+        $('.navbar').addClass('navbar-light bg-white shadow-sm')
+        $('.navbar').removeClass('navbar-dark bg-dark')
+      }
+
+    }
+
+    $(document).ready(function () {
+      $(document).scroll(function () {
+        if ($(window).scrollTop() > $("#mountains").position().top - 30) {
+          $('.logo-text').addClass('text-sa');
+          $('#logoWhite').addClass('d-none');
+          $('#logoRed').removeClass('d-none');
+          $('.navbar').addClass('navbar-light bg-white shadow-sm')
+          $('.navbar').removeClass('navbar-dark bg-dark')
+        } else {
+          $('.logo-text').removeClass('text-sa');
+          $('#logoWhite').removeClass('d-none');
+          $('#logoRed').addClass('d-none');
+          $('.navbar').removeClass('navbar-light bg-white shadow-sm')
+          $('.navbar').addClass('navbar-dark')
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>
